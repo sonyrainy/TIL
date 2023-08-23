@@ -15,7 +15,7 @@
 
 ![](https://velog.velcdn.com/images/blueshj610/post/1820adcc-82e6-4344-995f-4c346ce39676/image.gif)
 
-### ex_1) DFS 구현 설명(재귀함수 이용)
+### ex_1) DFS 구현 설명(재귀를 이용하고, stack의 특징(gif script_2와 같은 내용용)을 구현)
 > **스택에서 꺼내면서, 해당 노드의 인접 노드를 스택에 삽입한다.**
 
 ![](https://velog.velcdn.com/images/blueshj610/post/186c38c0-c4d9-4a30-abe4-4315ebdf555d/image.jpg)
@@ -38,14 +38,14 @@ void dfs(int x)
     // 인접한 노드의 사이즈만큼 탐색
     // 하지만 dfs의 원래 구조인 stack의 특징(LIFO)을
     // 생각하여 graph[x]의 뒤에서부터 탐색해보았다.
-    for (int i = graph[x].size()-1; i >=0; i--) 
+    for (int i = graph[x].size() - 1; i >= 0; i--)
     {
         int y = graph[x][i];
 
         // 방문하지 않았던 경우라면, 아래 코드 실행
-        if (!visited[y]) 
+        if (!visited[y])
             cout << y << " ";
-            dfs(y);
+        dfs(y);
     }
 }
 
@@ -65,11 +65,12 @@ int main(void)
     // 1부터 시작하도록 하므로 1 출력 후 시작
     cout << 1 << " ";
     dfs(1);
+    // 1 3 4 6 2 5
 }
 ```
 <br>
 
-### ex_2) 번호가 낮은 인접노드부터 방문하는 경우(재귀함수 이용)
+### ex_2) 번호가 낮은 인접노드부터 방문하는 경우(stack의 특징을 온전하게 이용하지 않았으나, 결국 그래프의 가장 아래를 찍고 오므로, DFS를 구현한 것으로 본다.)
 ```
 #include <iostream>
 #include <vector>
@@ -87,12 +88,12 @@ void dfs(int x)
     cout << x << " ";
 
     // 인접한 노드의 사이즈만큼 탐색
-    for (int i = 0; i < graph[x].size(); i++) 
+    for (int i = 0; i < graph[x].size(); i++)
     {
         int y = graph[x][i];
 
         // 방문하지 않은 경우면, 아래 코드 실행
-        if (!visited[y]) 
+        if (!visited[y])
             dfs(y);
     }
 }
@@ -102,33 +103,15 @@ int main(void)
     // 그래프 정의
     graph[1].push_back(2);
     graph[1].push_back(3);
-    graph[1].push_back(8);
 
-    graph[2].push_back(1);
-    graph[2].push_back(7);
+    graph[2].push_back(5);
+    graph[2].push_back(6);
 
-    graph[3].push_back(1);
     graph[3].push_back(4);
-    graph[3].push_back(5);
 
-    graph[4].push_back(3);
-    graph[4].push_back(5);
-
-    graph[5].push_back(3);
-    graph[5].push_back(4);
-
-    graph[6].push_back(7);
-
-    graph[7].push_back(2);
-    graph[7].push_back(6);
-    graph[7].push_back(8);
-
-    graph[8].push_back(1);
-    graph[8].push_back(7);
-
-
+    graph[4].push_back(6);
     dfs(1);
-    // 1 2 7 6 8 3 4 5
+    // 1 2 5 6 3 4
 }
 ```
 
