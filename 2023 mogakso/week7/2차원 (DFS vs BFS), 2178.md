@@ -6,6 +6,11 @@ dfs는 완전탐색 후 가장 작은 값을 선택
 경로가 아주 많을 수 잇음.
 시간복잡도 커짐
 
+![2차원 배열 탐색 TIP](https://github.com/sonyrainy/TIL/assets/91364766/c3b7c27f-8c26-4b5a-a034-e4c1c366336a)
+
+![DFSvsBFS](https://github.com/sonyrainy/TIL/assets/91364766/6a0f4328-899f-431c-9f07-9c25118ac0c9)
+
+
 근데 bfs는 최단거리 보장으로 볼 수 있음.
 최단인 부분에 제일 먼저 도착하면 끝내면 그만이기 때문
 
