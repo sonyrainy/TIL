@@ -1,4 +1,4 @@
-# java 기초
+# Java Basic
 
 - **입력 받기**
  
