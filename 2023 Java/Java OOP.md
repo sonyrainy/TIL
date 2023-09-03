@@ -50,8 +50,10 @@ VIPCustomer(int customerId, String customerName)을 사용하기 위해서, VIPC
 ```
 public class VIPCustomer extends Customer {
     public VIPCustomer(int customerId, String customerName) {
-        super(customerId, customerName); //super를 사용하여 Customer의 생성자를 호출한다.
-        //VIPCustomer의 추가적인 초기화 로직을 여기에 추가 가능하다.
+        super(customerId, customerName); //super를 사용하여
+//Customer의 생성자를 호출한다.
+//VIPCustomer의 추가적인 초기화 로직을 여기에 추가 가능하다.
+
     }
 }
 ```
@@ -110,11 +112,11 @@ public class Main {
 - **상속**
 > **IS-A 관계** : 하나의 변수에 의존하여 여러 분기문(else-if) 등을 사용할 때, 상속을 사용할 수 있다.
 >
->**ex) 강아지는 동물(강아지 클래스가 동물 클래스를 상속받는다.)**
+>**ex) 강아지는 동물이다.(강아지 클래스가 동물 클래스를 상속받는다.)**
 
 > **HAS-A 관계**(일반적으로 재사용을 하는 경우) : Student가 Subject를 포함하는 경우, Library를 구현할 때 ArrayList를 생성하여 사용하는 경우 등의 경우에는 상속하는 경우라고 보기 어렵다. 일반적인 포함 개념의 관계이다.
 >
->**ex) Computer - Cpu, Ram, MainBoard**
+>**ex) 컴퓨터는 CPU를 가지고 있다. Computer - Cpu, Ram, MainBoard**
 
 
 - **다운 캐스팅(instanceof 활용)**
@@ -252,16 +254,276 @@ public class MyClass implements MyInterface1, MyInterface2 {
 ```
 
 - 인터페이스와 상속의 차이점
-- 
+**구현 방법**
+	- 상속 : 클래스 간 상속 관계를 맺어 하위 클래스가 상위 클래스의 모든 특성을 물려받아 사용할 수 있는 것이다.
+   	- 인터페이스 : 클래스가 인터페이스를 구현할 때, 클래스에서는, 인터페이스에서 선언된 모든 메서드를 반드시 구현해야 한다. 인터페이스는 클래스와 다르게 멤버 변수를 가질 수 없다.
+**다중 상속**
+	- 상속 : 다중 상속을 지원하지 않는다. 즉, 하나의 클래스는 하나의 클래스만 상속이 가능하다.
+   	- 인터페이스 : 다중 상속을 지원한다. 즉, 하나의 클래스가 여러 개의 인터페이스를 구현할 수 있다.
+**목적**
+	- 상속 : 상속은 클래스 간 계층 구조를 만들어 코드 재사용성과 유지보수성을 높이는데 중점을 둔다. 부모 클래스에서 공통적인 코드를 작성하여 자식 클래스에서 상속 받아 사용할 수 있도록 한다.
+   	- 인터페이스 : 인터페이스는 클래스 간 관계없이 공통된 기능을 추상화하여 코드 재사용성과 유지보수성을 높이는데 중점을 둔다. 구현 클래스가 인터페이스에서 정의한 메서드를 구현하면, 인터페이스를 사용하는 코드에서 구현 클래스의 다형성(polymorphism)을 이용할 수 있다.
+ 
+**관계**
+	- 상속 : 상속 관계는 is-a 관계이다. 즉, 하위 클래스는 상위 클래스의 일종이라는 의미이다.
+ 	- 인터페이스 : 구현 클래스와 인터페이스의 관계는 has-a 관계이다. 즉, 구현 클래스는 인터페이스를 가지고 있다는 것을 의미한다고 볼 수 있다. 객체가 특정한 동작을 갖는지 여부를 나타낸다.
 
 
+- 인터페이스의 여러가지 요소
 
+**상수** : 모든 변수는 상수로 변환된다. public static final이 자동으로 붙는다. 해당 인터페이스를 구현하는 클래스에서 상수 변경이 불가능하고, 상수 값을 참조할 수 있다.
+**메서드** : 모든 선언된 메서드는 추상 메서드가 된다. public abstract가 자동으로 붙는다. 인터페이스를 구현하는 클래스에서는 이런 추상 메서드를 반드시 구현해야 한다.
+**디폴트 메서드(자바 8 이후)** : 구현을 가지는 메서드, 인터페이스를 구현하는 클래스들에서 공통으로 사용할 수 있는 기본 메서드이다. default 키워드를 사용한다. 
+default 키워드를 사용하여 구현하는 클래스에서 해당 메서드를 재정의할 수 있다.
++) 인터페이스를 구현하는 클래스에서 이 메서드를 구현하지 않아도 된다.
 
+![image](https://github.com/sonyrainy/TIL/assets/91364766/8311abea-4f0c-4a87-8b97-6a88b5b48dbf)
 
+정적 메서드 : 인스턴스 생성과 상관없이 인터페이스 타입으로 사용할 수 있는 메서드이다.
+private 메서드(자바 9 이후) : 인터페이스 내부에서만 사용하기 위해 구현하는 메서드이다. default 메서드나 static 메서드에서 사용한다.
 
+- 여러 인터페이스 구현하기 & 인터페이스 상속
 
----
-23.09.02 내로 추가할 예정
+![image](https://github.com/sonyrainy/TIL/assets/91364766/96447b89-a9bf-40a4-8473-a0c7ac5f74a1)
+
+1) Buy.java
+```
+public interface Buy {
+    void buy(); // 추상 메서드
+}
+```
+
+2) Sell.java
+```
+public interface Sell {
+    void sell();
+}
+```
+
+3) Customer.java
+```
+public class Customer implements Buy, Sell {
+
+    @Override
+    public void sell() {
+        System.out.println("customer sell");
+    }
+
+    @Override
+    public void buy() {
+        System.out.println("customer buy");
+    }
+
+    public void sayHello() {
+        System.out.println("say hello");
+    }
+}
+```
+
+4) CustomerTest.java
+```
+public class CustomerTest {
+    public static void main(String[] args) {
+
+        Customer customer = new Customer();
+
+        customer.sell();
+        customer.buy();
+        customer.sayHello();
+
+        Buy buyer = customer;
+        buyer.buy(); // sell()이나 sayHello()는 사용할 수 없다.
+
+        Sell seller = customer;
+        seller.sell(); // buy()나 sayHello()는 사용할 수 없다.
+    }
+}
+
+```
+
+→ 객체가 여러 개의 인터페이스를 implement 했더라도, 이 객체가 구현한 인터페이스가 무엇인지에 따라서 사용할 수 있는 것이 달라질 수 있다.
+
++) Buy 인터페이스에 아래 코드가 있고,
+
+```
+default void order() {
+    System.out.println("buyer order");
+}
+```
+
+또, Sell 인터페이스
+
+```
+default void order() { //default method이므로, 구현까지 가능하다.
+    System.out.println("seller order");
+}
+```
+
+위 코드를 작성하면, Customer 클래스에서 오류가 발생한다. 클래스가 인터페이스를 구현하려면, 모든 인터페이스에서 선언된 메서드를 클래스에서 구현해야 하기 때문이다.
+
+다중 인터페이스를 구현하는 경우, 동일한 시그니처(메서드명, 매개변수, 반환 유형)의 default 메서드를 가진 인터페이스들을 함께 구현하면 충돌이 발생한다.
+
+해당 경우, 해당 메서드를 아래와 같이 재정의하여 사용할 수 있다.
+
+```
+public class Customer implements Buy, Sell {
+    @Override
+    public void order() {
+        Buy.super.order(); // Buy 인터페이스의 order() 메서드를 호출
+        Sell.super.order(); // Sell 인터페이스의 order() 메서드를 호출
+        System.out.println("Customer is placing an order.");
+    }
+
+    // 나머지 메서드들을 구현
+}
+```
+
++) 인터페이스의 상속
+인터페이스를 다른 인터페이스에 상속하는 것을 인터페이스 상속이라고 한다.
+1) X.java
+```
+public interface X {
+    void x();
+}
+```
+2) Y.java
+```
+    void y();
+}
+```
+3) MyInterface.java
+```
+public interface MyInterface extends X, Y {
+    void myMethod();
+}
+```
+4) MyClass.java (필수적으로 구현해야 한다.)
+```
+public class MyClass implements MyInterface {
+
+    @Override
+    public void x() {
+        System.out.println("x()");
+    }
+
+    @Override
+    public void y() {
+        System.out.println("y()");
+    }
+
+    @Override
+    public void myMethod() {
+        System.out.println("myMethod()");
+    }
+}
+```
+5) MyClassTest.java
+```
+public class MyClassTest {
+
+    public static void main(String[] args) {
+
+        MyClass mClass = new MyClass();
+
+        X xClass = mClass;
+        xClass.x();
+
+        Y yClass = mClass;
+        yClass.y();
+
+        MyClass iClass = mClass;
+        iClass.x();
+        iClass.y();
+        iClass.myMethod();
+    }
+}
+```
+
+- 클래스 상속과 인터페이스 구현 함께 쓰기
+실무 중 프레임워크나 오픈소스와 함께 연동되는 구현을 하게 되면, 클래스 상속과 인터페이스 구현을 같이 사용하는 경우가 많다고 한다.
+
+![image](https://github.com/sonyrainy/TIL/assets/91364766/84b069f1-0174-4dbc-a599-e74f1c41db9a)
+
+**ex) 책을 책장에 넣고, 빼는 기능을 구현한 예제**
+
+1) Shelf.java
+```
+import java.util.ArrayList;
+
+public class Shelf {
+
+    protected ArrayList<String> shelf;
+
+    public Shelf() {
+        shelf = new ArrayList<String>();
+    }
+
+    public ArrayList<String> getShelf() {
+        return shelf;
+    }
+
+    public int getCount() {
+        return shelf.size();
+    }
+}
+```
+
+2) Queue.java
+   
+```
+public interface Queue {
+
+    void enQueue(String title);
+    String deQueue();
+
+    int getSize();
+}
+```
+
+3) BookShelf.java
+
+```
+public class BookShelf extends Shelf implements Queue {
+
+    @Override
+    public void enQueue(String title) {
+        shelf.add(title);
+    }
+
+    @Override
+    public String deQueue() {
+        if (!shelf.isEmpty()) {
+            return shelf.remove(0);
+        } else {
+            return null; // 큐가 비어있을 경우 처리
+        }
+    }
+
+    @Override
+    public int getSize() {
+        return getCount();
+    }
+}
+```
+
+4) BookShelfTest.java
+
+```
+public class BookShelfTest {
+
+    public static void main(String[] args) {
+
+        Queue bookQueue = new BookShelf();
+        bookQueue.enQueue("태백산맥1");
+        bookQueue.enQueue("태백산맥2");
+        bookQueue.enQueue("태백산맥3");
+
+        System.out.println(bookQueue.deQueue());
+        System.out.println(bookQueue.deQueue());
+        System.out.println(bookQueue.deQueue());
+    }
+}
+```
 
 
 
