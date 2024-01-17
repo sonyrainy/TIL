@@ -44,9 +44,11 @@ u+x, go+w : 소유자(u)에게 실행(x) 권한을 부여하고(+) 그룹(g)과 
 ```
 
 ex) chmod 활용 예시
+
 ![image](https://github.com/sonyrainy/TIL/assets/91364766/10836603-0ed2-447b-ba6f-e079b10c66ad)
 
 - 숫자를 이용한 파일 접근 권한 변경
+
 ![image](https://github.com/sonyrainy/TIL/assets/91364766/b0de683b-4d44-4be8-abba-433f9bda844e)
 
 
@@ -91,6 +93,7 @@ ls -l set.exe
 ```
 
 - 예제 : 사용자와 그룹에 실행권한을 부여하기 위한 명령으로 맞지 않은 것은?
+
 ```
 1. chmod u+x, g+x test.txt
 2. chmod 554 test.txt
@@ -108,6 +111,7 @@ PID : 프로세스가 할당받는 유일한(고유한) 프로세스 식별 번�
 UID : 프로세스를 소유하는 사용자 계정을 식별하는 번호
 PPID : 부모 프로세스의 ID
 ```
+
   - 프로세스의 종류 데몬/고아/좀비 :
 데몬 : 특정 서비스를 제공하기 위해 존재하며, 리눅스 커널에 의해 실행된다.(ssh 데몬)
 고아 : 자식 프로세스가 아직 실행 중인데 부모 프로세스가 먼저 종료되면 자식 프로세스는 고아 프로세스가 된다.
@@ -119,6 +123,7 @@ PPID : 부모 프로세스의 ID
   - GNU 옵션 : - 두 개로 시작한다.(ex) --pid)
 
 +) -f 옵션 : PPID와 C(CPU 사용량), 시작 시간 등의 정보가 추가로 출력한다.
+
 ![image](https://github.com/sonyrainy/TIL/assets/91364766/0b37677c-8b82-4ef1-b58b-895378aa24bb)
 
 +) -a 옵션 : 터미널에서 실행시킨 프로세스 정보를 출력한다.
