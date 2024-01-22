@@ -1,4 +1,4 @@
-> 시간복잡도, 포인터, Sparse Matrix, Transpose Operation, Fast Matrix Transpose, Array(StringPatternMatching_KMP 알고리즘), queue, stack 등에 대해 복습하였습니다.
+> 시간복잡도, 포인터, Sparse Matrix, Transpose Operation, Fast Matrix Transpose, Array, StringPatternMatching(KMP 알고리즘), queue, stack 등에 대해 복습하였습니다.
 ---
 - 성능분석
   - 공간복잡도 : 얼마나 많은 메모리를 차지하는가
