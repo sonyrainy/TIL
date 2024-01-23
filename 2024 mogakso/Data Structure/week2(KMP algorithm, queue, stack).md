@@ -13,6 +13,26 @@
 
 ---
 
-- queue
+>'가장 위(최근)에 들어온 데이터의 위치를 가리키게 하는 변수로 작동되도록 하기 위해서는 stack'을, '먼저 온 데이터가 먼저 나가고 나중에 들어온 데이터가 나중에 나가야 하도록 하기 위해서는 queue'를 사용하여 관리한다.
+
+<br>
+
+- queue(FIFO) : front, rear를 활용한다. 먼저 오는 것이 front로 오고 먼저 서비스를 받는다.
+  - addQ : queue의 가장 뒤에 요소를 추가한다. rear++ 한다.
+  - deleteQ : queue의 가장 앞에 있는 요소를 삭제한다. 이 후 front++ 한다.
+
+이 때, queue의 앞부분에 공간이 있지만, 뒷 부분은 가득 찬 경우, addQ를 통해 요소를 추가할 수 있을까? 할 수가 없다.
+
+따라서 순환되도록 circular queue 형태로 진행하기도 한다. 다 찼으면 가장 앞으로 다음에 들어올 값을 보내는 형태이다.
+
+- circular queue : 생성하면 front = 0, rear = 0인 상태
+  - addQ : 처음에 add하면, front = 0 값은 그대로 두고, rear 값은 + 1 증가하며 rear 값을 index로 갖는 queue의 위치에 값을 대입한다. queue의 index = 0인 부분을 비워두는 이유는 circular의 성질을 활용하기 위함이다.
+  - deleteQ : delete하면, ++front 한다. 그리고 해당 index를 갖는 값을 제거한다.
+  
+rear == front가 되면 error라고 본다.(queue is full)
+
+![image](https://github.com/sonyrainy/TIL/assets/91364766/e40ebe89-9ed6-481c-9366-69ab690f44e4)
+
+<br>
 
 - stack
