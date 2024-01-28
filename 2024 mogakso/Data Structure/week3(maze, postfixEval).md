@@ -1,3 +1,7 @@
+Stack을 활용하여 미로 탈출, postfix Evaluation을 표현해보았다.
+
+---
+
 - **Stack Maze**
 > 2차원 행렬에서 0과 1로 이루어진 미로가 있다고 보자.
 > 
@@ -7,7 +11,7 @@
 
 +) 미로의 가장자리를 표현하기 위해 행과 열에 추가적으로 +1만큼의 공간을 추가하여 미로를 받는다.
 
-![image](https://github.com/sonyrainy/TIL/assets/91364766/2a71eef2-b96d-4914-a6b2-85fdb118e7f6)
+![image](https://github.com/sonyrainy/TIL/assets/91364766/d098d6e5-9a22-4193-8b8b-a5e6ba8e0a54)
 
 위 그림에서 (1,1)를 시작 부분으로 두고 (북 → 북동 → 동 → 남동 → 남 ...) 시계 방향으로 뻗어나갈 수 있는지 여부를 파악한다.
 
@@ -33,6 +37,38 @@ ex) 위 ex) 내용을 이어서 설명하자면, (3,3)으로 이동하고, (3,3,
 <br>
 
 - **Stack-postfix Evaluation**
-  - Infix notation
-  - Prefix notation
-  - Postfix notation
+  - Infix notation : 7+5*2-8/4 → {7+(5*2)}-(8/4) 
+  - Prefix notation : -+7*52/84 → -{+7(*52)}(/84)
+  - Postfix notation : 752*+84/- → {7(52*)+}(84/)- → 15
+ 
+>위 3가지 종류 중 Postfix Notation을 stack을 활용해 표현해보고자 한다.
+
+A/B-C+D*E-A*C → AB/C-DE*+AC*- 바로 변환되는 String이 찍히도록 하고자 한다.
+
+우선순위 정보를 고려한다. 괄호의 시작(()이 괄호가 끝날 때까지는 Stack에 저장되어 있어야 한다. 우선 순위가 괄호 내부의 operator보다 낮으니까 머물러있는 것으로 보면 된다.
+
+<br>
+
+ex_1) a+b*c → abc*+
+
+operand는 일단 그냥 출력하고, operator(+,* ...)는 Stack에 넣는다.
+
+a는 출력한다. +를 0번째 Stack에 넣고, b를 출력하고, *를 1번째 Stack에 넣는다(+가 *의 우선순위보다 낮으니까 그냥 넣는다. Stack에 먼저 들어가있는 것의 우선순위가 더 높다면 먼저 들어가있던 operator을 먼저 출력(pop)하고, 이후에 나온 operator을 Stack에 push한다.).
+c를 출력한다. Stack의 top부터 차례대로 출력한다.
+
+```abc*+```가 출력된다.
+
+<br>
+
+ex_2) a*(b+c)*d → abc+*d*
+
+1. a를 출력한다.
+2. stack 0번째에 *를 push한다.
+3. (는 stack 1번째에 넣는다. 괄호의 우선순위가 그 어느 operand보다 크기 때문에 그냥 넣으면 된다.
+4. b를 출력한다.
+5. +를 stack 2번째에 넣는다(오른쪽 괄호가 나올 때까지 stack에 ex_1의 원칙에 따라 진행하면 된다.)
+6. c를 출력한다. 오른쪽 괄호가 나왔으므로, 왼쪽 괄호를 stack에서 삭제한다.
+7. c 다음으로 *가 나왔는데, Stack의 0번째에 있는 *와 우선순위를 고려했을 때 먼저 들어온 0번째의 *가 더 우선순위가 높으므로, 해당 *를 출력(pop)한다. c 다음에 있던 *는 Stack의 0번째 자리로 들어간다.
+8. d를 출력하고, 끝났으므로 Stack의 0번째 자리에 있는 *를 출력한다.
+
+```abc+*d*```가 출력된다.
