@@ -35,10 +35,13 @@ MALLOC에서 sizeof(*first)라는 것은 listPointer가 가리키고 있는 대�
 
 ![image](https://github.com/sonyrainy/TIL/assets/91364766/71274439-9adb-4931-a841-26434f1fb1a4)
 
+<br>
 
 - two nodes Linked List
 
 첫 번째 노드에 대한 포인터만 알고 있으면, 그 다음 link의 link의 link를 따라가는 식으로 그 다음 data를 찾을 수 있다.
+
+<br>
 
 - List insertion
 
