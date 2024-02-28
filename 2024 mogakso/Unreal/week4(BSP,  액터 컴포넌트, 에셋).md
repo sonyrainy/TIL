@@ -8,10 +8,15 @@
 
 +) OutLiner가 사라졌다면? ```window - outliner```
 
+<p align="center"><img src="https://github.com/sonyrainy/TIL/assets/91364766/62235978-2626-4ac2-a2b2-7723de513b04" width="350" />
+
 창고를 생성하기 위해서 다른 박스를 생성 하고 크기를 정한다. 생성한 박스를 wallsSubstract로 이름 지어 생성한다. 제일 앞서 만들었던 박스 크기의 -200만큼 x, y, z 성분 다 뺀다.
 그리고 brush type을 substractive로 설정한다.
 
 그리고 원래 있던 박스의 내부로 들어가면 안이 비어있는 것을 확인할 수 있다.
+<p align="center"><img src="https://github.com/sonyrainy/TIL/assets/91364766/1de0e4df-4543-49b1-989d-e167f1426362" width="650" />
+
+  
 
 해당 레벨을 시작하자마자 열리는 메인 레벨로 설정하려면, ```settings - project settings- maps&modes startup map과 default map을 main으로 해둔다.```
 
