@@ -4,4 +4,4 @@
 
 GitBash: [개인노션 페이지](https://inexpensive-eucalyptus-5b1.notion.site/GitBash-28239bfc157343afb57a1034551f2a81?pvs=4)
 
-GitHub: [개인노션 페이지](https://inexpensive-eucalyptus-5b1.notion.site/GitHub-VScode-497a88e768f047009515839c3dc06a44?pvs=4)
+GitHub 및 초기설정: [개인노션 페이지](https://inexpensive-eucalyptus-5b1.notion.site/GitHub-VScode-497a88e768f047009515839c3dc06a44?pvs=4)
