@@ -1,7 +1,7 @@
 
 System Programming Notes
 
-→ 추가 업데이트 예정입니다.
+(25.09.01 ~ ing)
 
 ---
 
@@ -16,7 +16,11 @@ https://inexpensive-eucalyptus-5b1.notion.site/1-System-Programming-Overview-275
 ## 3. Assembler_1
 [3. Assembler_1](https://inexpensive-eucalyptus-5b1.notion.site/3-Assembler_1-27609c27281b806a8887dae5d6b62712?source=copy_link)
 
+## 4. Assembler_2
+[4. Assembler_2](https://inexpensive-eucalyptus-5b1.notion.site/4-Assembler_2-28609c27281b80b7bffbd07de3ffd44c?source=copy_link)
 
+## 5. Assembler_3
+[5. Assembler_3](https://inexpensive-eucalyptus-5b1.notion.site/5-Assembler_3-28909c27281b80a1b088d222a190b165?source=copy_link)
 
 
 ## QnA
