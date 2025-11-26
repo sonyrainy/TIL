@@ -2,7 +2,7 @@ OS Notes
 
 ---
 
-## [혼자 공부하는 운영체제 스터디 링크](https://rumbling-heron-405.notion.site/Operating-System-27a9b4910c4a8054b083f2c42e721565?source=copy_link) 
+## [운영체제 스터디 링크](https://rumbling-heron-405.notion.site/Operating-System-27a9b4910c4a8054b083f2c42e721565?source=copy_link) 
 
 
 1. 운영체제를 알아야 하는 이유와 큰 그림
